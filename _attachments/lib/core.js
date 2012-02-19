@@ -14,6 +14,11 @@ IRC = Ember.Application.create({
                 timezone: 0
             });
         }
+        if (date && Ember.DateTime.detectInstance(date)) {
+            return date.adjust({
+                timezone: 0
+            });
+        }
 
         var dateObj = (Ember.typeOf(date) === 'string') ? new Date(date) : date;
         var time = dateObj.getTime();
