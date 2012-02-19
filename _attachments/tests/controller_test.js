@@ -29,16 +29,7 @@ function() {
 
     var addedDate = addedMessage.get('date');
     ok(Ember.DateTime.detectInstance(addedDate), 'date of the message is a Ember.DateTime');
-    var date = Ember.DateTime.create({
-        year: 2012,
-        month: 12,
-        day: 21,
-        hour: 12,
-        minute: 34,
-        second: 56,
-        millisecond: 789,
-        timezone: 0
-    });
+    var date = IRC.createDateTime('2012-12-21T12:34:56.789Z');
     equals(Ember.DateTime.compareDate(date, addedDate), 0, 'added date is the correct Ember.DateTime object');
     ok(date.isEqual(addedDate), 'added date is the correct Ember.DateTime object');
     equals(addedMessage.get('username'), message.user.name, 'addedMessage has the username');
@@ -71,6 +62,6 @@ function() {
 
     var addedDay = IRC.daysController.objectAt('0');
     ok(addedDay);
-
+	ok(IRC.createDateTime('2012-12-21T12:34:56.789Z').isEqual(addedDay.get('date')), 'added date is equal to original');
 	equals(addedDay.get('count'), 123, 'count of added day is the same as original');
 });
