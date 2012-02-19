@@ -1,7 +1,9 @@
 <ul class="unstyled" >
 	{{#each days}}
 		<li>
-			<strong>{{format date "%Y-%m-%d"}}</strong> ({{count}})
+			<a href="#" {{action "loadDate" target="IRC" }} ><strong>{{format date "%Y-%m-%d"}}</strong></a> ({{count}})
 		</li>
+		{{else}}
+		loading...
 	{{/each}}
 </ul>
