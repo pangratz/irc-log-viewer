@@ -1,0 +1,10 @@
+# Mac OS X
+.DS_Store
+
+# Couchapp
+.couchappignore
+.couchapprc
+
+# BPM
+_attachments/.bpm
+_attachments/assets

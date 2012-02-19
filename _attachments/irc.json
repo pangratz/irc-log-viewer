@@ -1,0 +1,31 @@
+{
+    "name": "irc",
+    "bpm": "1.0.0",
+    "directories": {
+        "lib": ["lib", "tests"]
+    },
+    "bpm:build": {
+        "bpm_libs.js": {
+            "files": [
+            "lib"
+            ]
+        },
+        "bpm_styles.css": {
+            "files": [
+            "css"
+            ]
+        },
+        "irc/bpm_tests.js": {
+            "files": [
+            "tests"
+            ]
+        }
+    },
+    "dependencies": {
+        "spade": ">= 0",
+        "ember": ">= 0"
+    },
+    "dependencies:development": {
+        "qunit": ">= 0"
+    }
+}
