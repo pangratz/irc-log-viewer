@@ -1,0 +1,8 @@
+[
+   "^lib",
+   "^\\.bpm",
+   ".*test.*",
+   "irc\\.json",
+   "bootstrap\\.css$",
+   "main\\.css$"
+]
