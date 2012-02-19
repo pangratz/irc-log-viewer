@@ -1,4 +1,4 @@
-IRC.set('messagesController', Ember.ArrayProxy.create({
+IRC.set('MessagesController', Ember.ArrayProxy.extend({
     content: [],
 
     addMessage: function(msg) {
@@ -14,7 +14,7 @@ IRC.set('messagesController', Ember.ArrayProxy.create({
     }
 }));
 
-IRC.set('daysController', Ember.ArrayProxy.create({
+IRC.set('DaysController', Ember.ArrayProxy.extend({
     content: [],
 
     addDay: function(day) {
