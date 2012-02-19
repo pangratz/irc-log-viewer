@@ -3,7 +3,7 @@ IRC.set('MessagesController', Ember.ArrayProxy.extend({
 
     addMessage: function(msg) {
         var message = msg.text || msg.message.text;
-        var username = (msg.user) ? msg.user.name : msg.message.user.name;
+        var username = (msg.user) ? msg.user.name: msg.message.user.name;
         var obj = Ember.Object.create({
             id: msg.id,
             username: username,
@@ -11,6 +11,10 @@ IRC.set('MessagesController', Ember.ArrayProxy.extend({
             date: IRC.createDateTime(msg.date)
         });
         this.pushObject(obj);
+    },
+
+    clear: function() {
+        this.set('content', []);
     }
 }));
 
@@ -22,5 +26,9 @@ IRC.set('DaysController', Ember.ArrayProxy.extend({
             date: IRC.createDateTime(day.date),
             count: day.count
         }));
+    },
+
+    clear: function() {
+        this.set('content', []);
     }
 }));

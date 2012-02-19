@@ -2,7 +2,10 @@ require('irc/controller');
 var controller;
 module('IRC.MessagesController', {
     setup: function() {
-        controller = IRC.MessagesController.create();
+        controller = IRC.MessagesController.create({});
+    },
+    teardown: function() {
+        controller = null;
     }
 });
 
@@ -37,9 +40,30 @@ function() {
     equals(addedMessage.get('text'), message.text, 'addedMessage has the text');
 });
 
+test('clear',
+function() {
+    ok(controller.clear, 'has a clear method');
+
+    var message = {
+        date: '2012-12-21T12:34:56.789Z',
+        text: 'test message',
+        user: {
+            name: 'username'
+        }
+    };
+    controller.addMessage(message);
+    ok(controller.get('length') > 0);
+
+    controller.clear();
+    equals(controller.get('length'), 0, 'after clear there are no messages in the controller');
+});
+
 module('IRC.DaysController', {
     setup: function() {
         controller = IRC.DaysController.create();
+    },
+    teardown: function() {
+        controller = null;
     }
 });
 
@@ -62,6 +86,21 @@ function() {
 
     var addedDay = controller.objectAt('0');
     ok(addedDay);
-	ok(IRC.createDateTime('2012-12-21T12:34:56.789Z').isEqual(addedDay.get('date')), 'added date is equal to original');
-	equals(addedDay.get('count'), 123, 'count of added day is the same as original');
+    ok(IRC.createDateTime('2012-12-21T12:34:56.789Z').isEqual(addedDay.get('date')), 'added date is equal to original');
+    equals(addedDay.get('count'), 123, 'count of added day is the same as original');
+});
+
+test('clear',
+function() {
+    ok(controller.clear, 'has a clear method');
+
+    var day = {
+        date: '2012-12-21T12:34:56.789Z',
+        count: 123
+    };
+    controller.addDay(day);
+    ok(controller.get('length') > 0);
+
+    controller.clear();
+    equals(controller.get('length'), 0, 'after clear there are no days in the controller');
 });
