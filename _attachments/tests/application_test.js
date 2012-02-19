@@ -74,6 +74,15 @@ function() {
     equals(createdDate.get('timezone'), 0, 'created date is in timezone 0');
 });
 
+test('creates an Ember.DateTime with current time if no argument is passed',
+function() {
+    var createdDate = IRC.createDateTime();
+    ok(createdDate, 'returned object exists');
+    ok(Ember.DateTime.detectInstance(createdDate), 'returned object is an instance of Ember.DateTime');
+    equals(createdDate.get('timezone'), 0, 'created date is in timezone 0');
+});
+
+
 module('IRC#getDateArray');
 
 test('method getDateArray exists',
