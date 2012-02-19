@@ -1,9 +1,7 @@
 <ul class="unstyled" >
 	{{#each messages}}
 		<li>
-			{{format date "%H:%m:%S"}} <strong>{{username}}</strong> {{text}}
+			{{format date "%H:%m:%S"}} <strong>{{username}}</strong> {{parse text}}
 		</li>
-		{{else}}
-		No messages for you
 	{{/each}}
 </ul>

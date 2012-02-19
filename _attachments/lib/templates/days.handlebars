@@ -1,8 +1,7 @@
 <ul class="unstyled" >
-	{{#each days }}
+	{{#each days}}
 		<li>
-			<strong>{{date}}</strong> ({{count}})
+			<strong>{{format date "%Y-%m-%d"}}</strong> ({{count}})
 		</li>
-		{{else}}
 	{{/each}}
 </ul>
