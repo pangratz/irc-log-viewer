@@ -1,3 +1,5 @@
+require('irc/controller');
+
 module('IRC.messagesController', {
     setup: function() {
         IRC.messagesController.set('content', []);

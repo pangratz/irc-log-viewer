@@ -1,4 +1,7 @@
 /*jshint sub: true */
+
+require('irc/templates');
+
 module('IRC templates', {
     setup: function() {
         // clear all templates
