@@ -1,9 +1,11 @@
 IRC.set('MessagesView', Ember.View.create({
     templateName: 'messages'.tmpl(),
-    messagesBinding: 'IRC.messagesController'
+    messagesBinding: 'IRC.messagesController',
+    loadingBinding: 'IRC.messagesController.loading'
 }));
 
 IRC.set('DaysView', Ember.View.create({
     templateName: 'days'.tmpl(),
-    daysBinding: 'IRC.daysController'
+    daysBinding: 'IRC.daysController',
+    loadingBinding: 'IRC.daysController.loading'
 }));

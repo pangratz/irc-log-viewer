@@ -13,12 +13,14 @@ IRC.set('dataSource', Ember.Object.create({
 
     loadDay: function(day) {
         IRC.messagesController.clear();
+        IRC.messagesController.set('loading', true);
         var from = day || IRC.createDateTime();
         var to = from.advance({
             day: 1
         });
         $.couch.db('irc').view('irc/messages', {
             success: function(data) {
+                IRC.messagesController.set('loading', false);
                 if (data && data.rows && data.rows.length > 0) {
                     data.rows.forEach(function(row) {
                         IRC.messagesController.addMessage(row.doc);
@@ -41,6 +43,7 @@ IRC.dataSource.loadDay(IRC.createDateTime().adjust({
 $.couch.db('irc').view('irc/messages', {
     success: function(data) {
         if (data && data.rows && data.rows.length > 0) {
+            IRC.daysController.set('loading', false);
             data.rows.forEach(function(doc) {
                 var key = doc.key;
                 var date = Ember.DateTime.create().adjust({

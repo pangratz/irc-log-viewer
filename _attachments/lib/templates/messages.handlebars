@@ -1,9 +1,11 @@
-<ul class="unstyled" >
-	{{#each messages}}
-		<li>
-			{{format date "%H:%M"}} <strong>{{username}}</strong> {{parse text}}
-		</li>
-		{{else}}
-		loading...
-	{{/each}}
-</ul>
+{{#if loading}}
+	loading messages ...
+{{else}}
+	<ul class="unstyled" >
+		{{#each messages}}
+			<li>
+				{{format date "%H:%M"}} <strong>{{username}}</strong> {{parse text}}
+			</li>
+		{{/each}}
+	</ul>
+{{/if}}

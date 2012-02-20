@@ -1,5 +1,6 @@
 IRC.set('MessagesController', Ember.ArrayProxy.extend({
     content: [],
+    loading: true,
 
     addMessage: function(msg) {
         var message = msg.text || msg.message.text;
@@ -20,6 +21,7 @@ IRC.set('MessagesController', Ember.ArrayProxy.extend({
 
 IRC.set('DaysController', Ember.ArrayProxy.extend({
     content: [],
+    loading: true,
 
     addDay: function(day) {
         this.pushObject(Ember.Object.create({
