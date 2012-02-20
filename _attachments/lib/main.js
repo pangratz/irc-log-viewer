@@ -33,17 +33,22 @@ IRC.set('dataSource', Ember.Object.create({
     }
 
 }));
-IRC.dataSource.loadDay(IRC.createDateTime());
+IRC.dataSource.loadDay(IRC.createDateTime().adjust({
+    hour: 0,
+    timezone: 0
+}));
 
 $.couch.db('irc').view('irc/messages', {
     success: function(data) {
         if (data && data.rows && data.rows.length > 0) {
             data.rows.forEach(function(doc) {
                 var key = doc.key;
-                var date = Ember.DateTime.create({
+                var date = Ember.DateTime.create().adjust({
                     year: key[0],
                     month: key[1],
-                    day: key[2]
+                    day: key[2],
+                    hour: 0,
+                    timezone: 0
                 });
                 IRC.daysController.addDay({
                     date: date,
