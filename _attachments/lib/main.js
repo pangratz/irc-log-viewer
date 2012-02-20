@@ -61,5 +61,6 @@ $.couch.db('irc').view('irc/messages', {
             });
         }
     },
-    group_level: 3
+    group_level: 3,
+    descending: true
 });
