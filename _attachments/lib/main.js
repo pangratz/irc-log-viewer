@@ -18,6 +18,7 @@ IRC.set('dataSource', Ember.Object.create({
         var to = from.advance({
             day: 1
         });
+        IRC.messagesController.set('date', from);
         $.couch.db('irc').view('irc/messages', {
             success: function(data) {
                 IRC.messagesController.set('loading', false);

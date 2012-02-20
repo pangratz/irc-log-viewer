@@ -20,7 +20,12 @@ function(property, format) {
         dateFormat = format;
     }
     var value = Ember.getPath(this, property);
-    value = value.toFormattedString(dateFormat);
+    if (value && Ember.DateTime.detectInstance(value)) {
+        value = value.toFormattedString(dateFormat);
+    } else {
+        console.log(value);
+        value = undefined;
+    }
     return new Handlebars.SafeString(value);
 });
 
