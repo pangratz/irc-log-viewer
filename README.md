@@ -1,33 +1,23 @@
-## Generated CouchApp
+what is this about
 
-This is meant to be an example CouchApp and to ship with most of the CouchApp goodies.
+structure
 
-Clone with git:
+ - data comes from CouchDB hosted at emberjs.iriscouch.com/irc, which is filled by emberjs-hubot
+ - couchapp
+ - inside attachments is bpm curated application
 
-    git clone git://github.com/couchapp/example.git
-    cd example
+installation
+ 
+ - needs bpm
+ - CouchDB where app can be deployed, setup sync with source couch
 
-Install with 
-    
-    couchapp push . http://localhost:5984/example
+development
 
-or (if you have security turned on)
+ - bpm preview in attachments
+ - tests are in tests folder
+ - localhost:4020/tests.html
 
-    couchapp push . http://adminname:adminpass@localhost:5984/example
-  
-You can also create this app by running
+deploy
 
-    couchapp generate example && cd example
-    couchapp push . http://localhost:5984/example
-
-Deprecated: *couchapp generate proto && cd proto*
-
-
-## Todo
-
-* factor CouchApp Commonjs to jquery.couch.require.js
-* use $.couch.app in app.js
-
-## License
-
-Apache 2.0
+ - optional create .couchapprc file
+ - run rake 
