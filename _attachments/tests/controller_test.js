@@ -9,12 +9,12 @@ module('IRC.MessagesController', {
     }
 });
 
-test('exists',
+test('exists', 1,
 function() {
     ok(IRC.MessagesController, 'it exists');
 });
 
-test('add new message',
+test('add new message', 8,
 function() {
     ok(controller.addMessage, 'has a method addMessage');
     var message = {
@@ -40,7 +40,7 @@ function() {
     equals(addedMessage.get('text'), message.text, 'addedMessage has the text');
 });
 
-test('clear',
+test('clear', 3,
 function() {
     ok(controller.clear, 'has a clear method');
 
@@ -67,12 +67,12 @@ module('IRC.DaysController', {
     }
 });
 
-test('exists',
+test('exists', 1,
 function() {
     ok(IRC.DaysController, 'it exists');
 });
 
-test('add new day',
+test('add new day', 5,
 function() {
     ok(controller.addDay, 'it has a method addDay');
 
@@ -90,7 +90,7 @@ function() {
     equals(addedDay.get('count'), 123, 'count of added day is the same as original');
 });
 
-test('clear',
+test('clear', 3,
 function() {
     ok(controller.clear, 'has a clear method');
 

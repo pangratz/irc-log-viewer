@@ -9,7 +9,7 @@ module('IRC templates', {
     }
 });
 
-test('tmpl adds the template to Ember.TEMPLATES',
+test('tmpl adds the template to Ember.TEMPLATES', 3,
 function() {
     var testTemplateName = 'test_template';
     ok(!Ember.TEMPLATES['test_template'], 'precond: template not loaded');
@@ -18,7 +18,9 @@ function() {
     ok(Ember.TEMPLATES['test_template'], 'template is available');
 });
 
-test('Handlebars format helper works with default format',
+module('Handlebars Helper');
+
+test('Handlebars format helper works with default format', 1,
 function() {
     var view = Ember.View.create({
         elementId: 'dateView',
@@ -34,7 +36,7 @@ function() {
 });
 
 
-test('Handlebars format helper works with specified format',
+test('Handlebars format helper works with specified format', 1,
 function() {
     var view = Ember.View.create({
         elementId: 'dateView',
@@ -53,7 +55,7 @@ function() {
     equals($('#dateView').html().trim(), '2012-12-21');
 });
 
-test('Handlebars parse helper',
+test('Handlebars parse helper', 1,
 function() {
     var view = Ember.View.create({
         elementId: 'formatView',
@@ -70,7 +72,7 @@ function() {
 
 module('String.prototype.parseURL');
 
-test('wraps urls in anchor tags',
+test('wraps urls in anchor tags', 6,
 function() {
     var testAnchor = function(url, description) {
         equals(url.parseURL(), '<a href="' + url + '">' + url + '</a>', description);
