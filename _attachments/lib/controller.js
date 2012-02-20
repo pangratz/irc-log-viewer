@@ -3,7 +3,12 @@ IRC.set('MessagesController', Ember.ArrayProxy.extend({
     loading: true,
 
     addMessage: function(msg) {
-        var message = msg.text || msg.message.text;
+        var message = '';
+        if (msg.hasOwnProperty('text')) {
+            message = msg.text;
+        } else if (msg.hasOwnProperty('message') && msg.message.hasOwnProperty('text')) {
+            message = msg.message.text;
+        }
         var username = (msg.user) ? msg.user.name: msg.message.user.name;
         var obj = Ember.Object.create({
             id: msg.id,

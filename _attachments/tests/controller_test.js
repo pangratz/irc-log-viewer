@@ -2,10 +2,12 @@ require('irc/controller');
 var controller;
 module('IRC.MessagesController', {
     setup: function() {
-        controller = IRC.MessagesController.create({});
+        controller = IRC.MessagesController.create({
+            content: []
+        });
     },
     teardown: function() {
-        controller = null;
+        controller.clear();
     }
 });
 
@@ -38,6 +40,21 @@ function() {
     ok(date.isEqual(addedDate), 'added date is the correct Ember.DateTime object');
     equals(addedMessage.get('username'), message.user.name, 'addedMessage has the username');
     equals(addedMessage.get('text'), message.text, 'addedMessage has the text');
+});
+
+test('add a new message with empty text string',
+function() {
+    var message = {
+        date: '2012-12-21T12:34:56.789Z',
+        text: '',
+        user: {
+            name: 'username'
+        }
+    };
+
+    controller.addMessage(message);
+    equal(controller.get('length'), 1, 'length is 1');
+    equal(controller.objectAt(0).get('text'), '', 'text of message is an empty string');
 });
 
 test('clear', 3,
