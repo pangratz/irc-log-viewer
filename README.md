@@ -1,23 +1,39 @@
-what is this about
+## irc-log-viewer
 
-structure
+This is a viewer for IRC logs which are stored in a CouchDB. It's basically a couchapp using Ember.js. Demo? Here you go: [http://emberjs.iriscouch.com/irc/_design/viewer/index.html](http://emberjs.iriscouch.com/irc/_design/viewer/index.html)
 
- - data comes from CouchDB hosted at emberjs.iriscouch.com/irc, which is filled by emberjs-hubot
- - couchapp
- - inside attachments is bpm curated application
+### Awesome stuff used
 
-installation
- 
- - needs bpm
- - CouchDB where app can be deployed, setup sync with source couch
+- [Ember.js](https://github.com/emberjs/ember.js)
+- [BPM](https://github.com/bpm/bpm)
+- [CouchDB](http://couchdb.apache.org/)
 
-development
+## Basic structure
 
- - bpm preview in attachments
- - tests are in tests folder
- - localhost:4020/tests.html
+The IRC messages saved in the CouchDB have the following format:
 
-deploy
+```javascript
+{
+   "user": {
+       "id": "123",
+       "name": "GOB"
+   },
+   "text": "Come on!",
+   "date": "2012-12-21T12:34:56.789Z"
+}
+```
 
- - optional create .couchapprc file
- - run rake 
+Inside the `_attachments` folder is the Ember.js app. The used views are located at [https://github.com/pangratz/irc-log](https://github.com/pangratz/irc-log)
+
+## Development
+
+### Prerequisites:
+- installed BPM
+- CouchDB where app can be deployed
+
+### Develop
+
+- Clone this repo
+- Tests are in located in the `_attachments/tests` folder
+- Execute `bpm preview` inside `_attachments`
+- Access `localhost:4020/tests.html` to execute the tests
