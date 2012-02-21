@@ -23,7 +23,7 @@ The IRC messages saved in the CouchDB have the following format:
 }
 ```
 
-Inside the `_attachments` folder is the Ember.js app. The used views are located at [https://github.com/pangratz/irc-log](https://github.com/pangratz/irc-log)
+Inside the `_attachments` folder is the Ember.js app.
 
 ## Development
 
