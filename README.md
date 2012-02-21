@@ -24,7 +24,7 @@ The IRC messages saved in the CouchDB have the following format:
 }
 ```
 
-One example of filling the CouchDB with the IRC messages would be a [Hubot](https://github.com/github/hubot) configured with the [store-messages-couchdb.coffee](https://github.com/github/hubot-scripts/blob/master/src/scripts/store-messages-couchdb.coffee) script.
+One example of filling the CouchDB with the IRC messages would be a [Hubot](https://github.com/github/hubot) configured with the [store-messages-couchdb.coffee](https://github.com/github/hubot-scripts/blob/master/src/scripts/store-messages-couchdb.coffee) script and using an [IRC Adapter](https://github.com/nandub/hubot-irc)
 
 ## CouchDB Views
 
