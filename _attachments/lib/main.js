@@ -19,7 +19,7 @@ IRC.set('dataSource', Ember.Object.create({
             day: 1
         });
         IRC.messagesController.set('date', from);
-        $.couch.db('irc').view('irc/messages', {
+        $.couch.db('irc').view('viewer/messages', {
             success: function(data) {
                 if (data && data.rows && data.rows.length > 0) {
                     data.rows.forEach(function(row) {
@@ -41,7 +41,7 @@ IRC.dataSource.loadDay(IRC.createDateTime().adjust({
     timezone: 0
 }));
 
-$.couch.db('irc').view('irc/messages', {
+$.couch.db('irc').view('viewer/messages', {
     success: function(data) {
         if (data && data.rows && data.rows.length > 0) {
             data.rows.forEach(function(doc) {
