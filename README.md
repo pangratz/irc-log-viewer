@@ -7,6 +7,7 @@ This is a viewer for IRC logs which are stored in a CouchDB. It's basically a co
 - [Ember.js](https://github.com/emberjs/ember.js)
 - [BPM](https://github.com/bpm/bpm)
 - [CouchDB](http://couchdb.apache.org/)
+- [Couchapp](http://couchapp.org/)
 
 ## Stored IRC messages
 
