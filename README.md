@@ -8,7 +8,7 @@ This is a viewer for IRC logs which are stored in a CouchDB. It's basically a co
 - [BPM](https://github.com/bpm/bpm)
 - [CouchDB](http://couchdb.apache.org/)
 
-## Basic structure
+## Stored IRC messages
 
 The IRC messages saved in the CouchDB have the following format:
 
@@ -23,7 +23,7 @@ The IRC messages saved in the CouchDB have the following format:
 }
 ```
 
-Inside the `_attachments` folder is the Ember.js app.
+One example of filling the CouchDB with the IRC messages would be a [Hubot](https://github.com/github/hubot) configured with the [store-messages-couchdb.coffee](https://github.com/github/hubot-scripts/blob/master/src/scripts/store-messages-couchdb.coffee) script.
 
 ## Development
 
