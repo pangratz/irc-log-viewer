@@ -4,10 +4,11 @@ This is a viewer for IRC logs which are stored in a CouchDB. It's basically a co
 
 ### Awesome stuff used
 
-- [Ember.js](https://github.com/emberjs/ember.js)
-- [BPM](https://github.com/bpm/bpm)
-- [CouchDB](http://couchdb.apache.org/)
-- [Couchapp](http://couchapp.org/)
+- [sexy Ember.js](https://github.com/emberjs/ember.js)
+- [sexy BPM](https://github.com/bpm/bpm)
+- [sexy CouchDB](http://couchdb.apache.org/)
+- [sexy Couchapp](http://couchapp.org/)
+- [Twitter's sexy Bootstrap](http://twitter.github.com/bootstrap/)
 
 ## Stored IRC messages
 
