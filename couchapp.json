@@ -1,4 +1,4 @@
 {
-    "name": "#emberjs IRC logs",
-    "description": "Logs of #emberjs IRC channel"
+    "name": "IRC log viewer",
+    "description": "IRC log viewer"
 }
