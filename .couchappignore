@@ -4,5 +4,9 @@
    ".*test.*",
    "irc\\.json",
    "bootstrap\\.css$",
-   "main\\.css$"
+   "main\\.css$",
+   "\\.DS_Store",
+   "Rakefile",
+   "node_modules",
+   "proxy"
 ]
