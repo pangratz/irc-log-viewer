@@ -1,12 +1,12 @@
 {{#if loading}}
-	loading messages ...
+    loading messages ...
 {{else}}
-	<h3>{{format date "%Y-%m-%d"}}</h3>
-	<ul class="unstyled" >
-		{{#each messages}}
-			<li>
-				{{format date "%H:%M"}} <strong>{{unbound username}}</strong> {{parse text}}
-			</li>
-		{{/each}}
-	</ul>
+    <h3>{{format date "%Y-%m-%d"}}</h3>
+    <ul class="unstyled" >
+        {{#each messages}}
+            <li>
+                {{format date "%H:%M"}} <strong>{{unbound username}}</strong> {{parse text}}
+            </li>
+        {{/each}}
+    </ul>
 {{/if}}

@@ -1,6 +1,6 @@
 function(doc) {
-    if (doc.user || doc.message.user) {
-        var user = doc.user || doc.message.user;
+    if (doc.user) {
+        var user = doc.user;
         emit(user.name, 1);
     }
 };

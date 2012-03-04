@@ -1,11 +1,13 @@
 {{#if loading}}
-	loading days ...
+    loading days ...
 {{else}}
-	<ul class="unstyled" >
-		{{#each days}}
-			<li>
-				<a href="#" {{action "loadDate" target="IRC" }} ><strong>{{format date "%Y-%m-%d"}}</strong></a> ({{count}})
-			</li>
-		{{/each}}
-	</ul>
+    <ul class="unstyled" >
+        {{#each days}}
+            <li>
+                <a href="#" {{action "loadDate" target="IRC" }} >
+                    <strong>{{format date "%Y-%m-%d"}}</strong>
+                </a> ({{count}})
+            </li>
+        {{/each}}
+    </ul>
 {{/if}}
