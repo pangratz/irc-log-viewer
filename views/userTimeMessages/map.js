@@ -1,10 +1,10 @@
 function(doc) {
     if (doc.user || doc.message.user) {
         var d = new Date(doc.date),
-        h = d.getHours(),
-        m = d.getMinutes(),
-        s = d.getSeconds(),
-        ms = d.getMilliseconds();
+        h = d.getUTCHours(),
+        m = d.getUTCMinutes(),
+        s = d.getUTCSeconds(),
+        ms = d.getUTCMilliseconds();
 
         var user = doc.user || doc.message.user;
 
