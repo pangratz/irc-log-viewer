@@ -1,5 +1,5 @@
 function(doc) {
-    if (doc.date) {
+    if (doc.date && doc.user && doc.user.room) {
         var d = new Date(doc.date),
         Y = d.getUTCFullYear(),
         M = d.getUTCMonth() + 1,
