@@ -1,31 +1,34 @@
 {
-    "name": "irc",
-    "bpm": "1.0.0",
-    "directories": {
-        "lib": ["lib", "tests"]
+  "name": "irc",
+  "bpm": "1.0.0",
+  "directories": {
+    "lib": [
+      "lib",
+      "tests"
+    ]
+  },
+  "bpm:build": {
+    "bpm_libs.js": {
+      "files": [
+
+      ]
     },
-    "bpm:build": {
-        "bpm_libs.js": {
-            "files": [
-            "lib"
-            ]
-        },
-        "bpm_styles.css": {
-            "files": [
-            "css"
-            ]
-        },
-        "irc/bpm_tests.js": {
-            "files": [
-            "tests"
-            ]
-        }
+    "bpm_styles.css": {
+      "files": [
+
+      ]
     },
-    "dependencies": {
-        "spade": ">= 0",
-        "ember": ">= 0"
-    },
-    "dependencies:development": {
-        "qunit": ">= 0"
+    "irc/bpm_tests.js": {
+      "files": [
+        "tests"
+      ]
     }
+  },
+  "dependencies": {
+    "spade": ">= 0",
+    "ember": "= 0.9.5"
+  },
+  "dependencies:development": {
+    "qunit": ">= 0"
+  }
 }
