@@ -5,7 +5,7 @@ This is a viewer for IRC logs which are stored in a CouchDB. It's basically a co
 ### Awesome stuff used
 
 - [sexy Ember.js](https://github.com/emberjs/ember.js)
-- [sexy BPM](https://github.com/bpm/bpm)
+- [sexy interline/ember-skeleton](https://github.com/interline/ember-skeleton)
 - [sexy CouchDB](http://couchdb.apache.org/)
 - [sexy Couchapp](http://couchapp.org/)
 - [Twitter's sexy Bootstrap](http://twitter.github.com/bootstrap/)
@@ -38,13 +38,14 @@ Inside the `_attachments` folder is the basic front end. It uses Ember.js and BP
 ## Development
 
 ### Prerequisites:
-- installed BPM
+- installed Ruby
 - installed CouchDB where app can be deployed or use a free hosting service like the excellent [Iris Couch](http://www.iriscouch.com/)
 - installed `couchapp` command line tool for easy pushing of the app to a CouchDB, see [installation](http://couchapp.org/page/installing)
 
 ### Developing
 
 - Clone this repo, obviously
+- execute `bundle install`
 - Tests are in located in the `_attachments/tests` folder
 - Execute `bpm preview` inside `_attachments` to start a development server
 - Access [http://localhost:4020/tests.html](http://localhost:4020/tests.html) to execute the tests
