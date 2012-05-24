@@ -5,8 +5,6 @@
 // License:   Licensed under MIT license (see license.js)
 // ==========================================================================
 
-require('ember-runtime');
-
 var get = Ember.get, set = Ember.set;
 
 // simple copy op needed for just this code.

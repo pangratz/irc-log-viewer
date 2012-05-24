@@ -1,7 +1,7 @@
-require('./core');
-require('./controller');
-require('./templates');
-require('./couchdb_datasource');
+require('irc/core');
+require('irc/controller');
+require('irc/templates');
+require('irc/couchdb_datasource');
 
 IRC.daysController = IRC.DaysController.create();
 IRC.messagesController = IRC.MessagesController.create();

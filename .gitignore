@@ -4,6 +4,8 @@
 # Couchapp
 .couchapprc
 
-# BPM
-_attachments/.bpm
-_attachments/assets
+# Rack
+tmp
+
+# Asset output
+_attachments

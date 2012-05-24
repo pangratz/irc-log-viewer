@@ -1,9 +1,12 @@
+require('jquery');
 require('ember');
+require('jquery.couch');
 
 /* YES and NO globals needed in datetime */
 window.YES = true;
 window.NO = false;
-require('./datetime');
+
+require('datetime');
 
 IRC = Ember.Application.create({
     VERSION: '0.0.1-snapshot',
@@ -36,7 +39,8 @@ IRC = Ember.Application.create({
         return a;
     },
 
-    loadDate: function(view, event, day) {
+    loadDate: function(event) {
+        var day = event.context;
         var date = Ember.getPath(day, 'date');
         var dataSource = Ember.getPath(this, 'dataSource');
         if (dataSource) {

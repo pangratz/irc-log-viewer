@@ -1,4 +1,6 @@
+require('irc/core');
 require('irc/controller');
+
 var controller;
 module('IRC.MessagesController', {
     setup: function() {
@@ -28,7 +30,7 @@ function() {
     };
 
     controller.addMessage(message);
-    equals(controller.get('length'), 1, 'addMessage adds message to content');
+    equal(controller.get('length'), 1, 'addMessage adds message to content');
 
     var addedMessage = controller.objectAt(0);
     ok(addedMessage);
@@ -36,10 +38,10 @@ function() {
     var addedDate = addedMessage.get('date');
     ok(Ember.DateTime.detectInstance(addedDate), 'date of the message is a Ember.DateTime');
     var date = IRC.createDateTime('2012-12-21T12:34:56.789Z');
-    equals(Ember.DateTime.compareDate(date, addedDate), 0, 'added date is the correct Ember.DateTime object');
+    equal(Ember.DateTime.compareDate(date, addedDate), 0, 'added date is the correct Ember.DateTime object');
     ok(date.isEqual(addedDate), 'added date is the correct Ember.DateTime object');
-    equals(addedMessage.get('username'), message.user.name, 'addedMessage has the username');
-    equals(addedMessage.get('text'), message.text, 'addedMessage has the text');
+    equal(addedMessage.get('username'), message.user.name, 'addedMessage has the username');
+    equal(addedMessage.get('text'), message.text, 'addedMessage has the text');
 });
 
 test('add a new message with empty text string',
@@ -72,7 +74,7 @@ function() {
     ok(controller.get('length') > 0);
 
     controller.clear();
-    equals(controller.get('length'), 0, 'after clear there are no messages in the controller');
+    equal(controller.get('length'), 0, 'after clear there are no messages in the controller');
 });
 
 module('IRC.DaysController', {
@@ -99,12 +101,12 @@ function() {
     };
 
     controller.addDay(day);
-    equals(controller.get('length'), 1, 'added day');
+    equal(controller.get('length'), 1, 'added day');
 
     var addedDay = controller.objectAt('0');
     ok(addedDay);
     ok(IRC.createDateTime('2012-12-21T12:34:56.789Z').isEqual(addedDay.get('date')), 'added date is equal to original');
-    equals(addedDay.get('count'), 123, 'count of added day is the same as original');
+    equal(addedDay.get('count'), 123, 'count of added day is the same as original');
 });
 
 test('clear', 3,
@@ -119,5 +121,5 @@ function() {
     ok(controller.get('length') > 0);
 
     controller.clear();
-    equals(controller.get('length'), 0, 'after clear there are no days in the controller');
+    equal(controller.get('length'), 0, 'after clear there are no days in the controller');
 });

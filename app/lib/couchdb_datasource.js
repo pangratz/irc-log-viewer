@@ -1,4 +1,4 @@
-require('./core');
+require('irc/core');
 
 IRC.CouchDBDataSource = Ember.Object.extend({
 
