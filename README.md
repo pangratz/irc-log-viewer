@@ -33,7 +33,7 @@ The `messages` view returns all messages, where the key is the date structured a
 
 ## Front end
 
-Inside the `_attachments` folder is the basic front end. It uses Ember.js and BPM as a build system.
+Inside the `app` folder is the basic application.
 
 ## Development
 
@@ -46,13 +46,17 @@ Inside the `_attachments` folder is the basic front end. It uses Ember.js and BP
 
 - Clone this repo, obviously
 - execute `bundle install`
-- Tests are in located in the `_attachments/tests` folder
-- Execute `bpm preview` inside `_attachments` to start a development server
+- Tests are in located in the `tests` folder
+- Execute `bundle execute rackup` to start test server
 - Access [http://localhost:4020/tests.html](http://localhost:4020/tests.html) to execute the tests
+
+or
+
+- Execute `bundle execute rake test` to run the tests from command line
 
 ### Deploy
 
-- execute `bpm rebuild` inside `_attachments`
+- execute `bundle execute rake build`
 - push the Couchapp to your CouchDB; if you have `couchapp` installed, do a `couchapp push http://localhost:5984/irc`
 - access the IRC log viewer at `http://localhost:5984/irc/_design/viewer/index.html`
 
