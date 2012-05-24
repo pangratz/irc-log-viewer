@@ -4,7 +4,7 @@ require 'colored'
 require 'rake-pipeline'
 
 desc "Build #{APPNAME}"
-task :build do
+task :build => :clean do
   Rake::Pipeline::Project.new('Assetfile').invoke
 end
 
