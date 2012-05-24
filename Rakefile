@@ -8,6 +8,12 @@ task :build do
   Rake::Pipeline::Project.new('Assetfile').invoke
 end
 
+desc "Build #{APPNAME}"
+task :clean do
+  Rake::Pipeline::Project.new('Assetfile').clean
+end
+
+
 desc "Run tests with PhantomJS"
 task :test => :build do
   unless system("which phantomjs > /dev/null 2>&1")

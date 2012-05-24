@@ -1,10 +1,12 @@
 require('jquery');
 require('ember');
+require('jquery.couch');
 
 /* YES and NO globals needed in datetime */
 window.YES = true;
 window.NO = false;
-require('irc/datetime');
+
+require('datetime');
 
 IRC = Ember.Application.create({
     VERSION: '0.0.1-snapshot',

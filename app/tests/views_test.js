@@ -1,1 +1,1 @@
-require('irc/views');
+require('irc/core');

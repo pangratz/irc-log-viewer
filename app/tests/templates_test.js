@@ -1,5 +1,5 @@
 /*jshint sub: true */
-
+require('irc/core');
 require('irc/templates');
 
 module('IRC templates', {
@@ -14,7 +14,7 @@ function() {
     var testTemplateName = 'test_template';
     ok(!Ember.TEMPLATES['test_template'], 'precond: template not loaded');
     var main_page = 'test_template'.tmpl();
-    equals(main_page, 'test_template');
+    equal(main_page, 'test_template');
     ok(Ember.TEMPLATES['test_template'], 'template is available');
 });
 
@@ -52,7 +52,7 @@ function() {
         view.appendTo('#qunit-fixture');
     });
 
-    equals($('#dateView').html().trim(), '2012-12-21');
+    equal($('#dateView').html().trim(), '2012-12-21');
 });
 
 test('Handlebars parse helper', 1,
@@ -67,7 +67,7 @@ function() {
         view.appendTo('#qunit-fixture');
     });
 
-    equals($('#formatView').html().trim(), 'hello <a href="http://www.google.com">http://www.google.com</a> you', 'link is replaced');
+    equal($('#formatView').html().trim(), 'hello <a href="http://www.google.com">http://www.google.com</a> you', 'link is replaced');
 });
 
 module('String.prototype.parseURL');
@@ -75,7 +75,7 @@ module('String.prototype.parseURL');
 test('wraps urls in anchor tags', 6,
 function() {
     var testAnchor = function(url, description) {
-        equals(url.parseURL(), '<a href="' + url + '">' + url + '</a>', description);
+        equal(url.parseURL(), '<a href="' + url + '">' + url + '</a>', description);
     };
     testAnchor('https://emberjs.com', 'recognizes https domains');
     testAnchor('http://emberjs.com', 'recognizes http domains');

@@ -1,7 +1,7 @@
 /*jshint sub: true */
 String.prototype.tmpl = function() {
     if (!Ember.TEMPLATES[this]) {
-        Ember.TEMPLATES[this] = require('./templates/' + this);
+        Ember.TEMPLATES[this] = require('irc/~templates/' + this);
     }
     return this;
 };

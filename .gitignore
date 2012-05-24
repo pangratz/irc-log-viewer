@@ -3,3 +3,6 @@
 
 # Couchapp
 .couchapprc
+
+# Rack
+tmp

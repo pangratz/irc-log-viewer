@@ -7,7 +7,7 @@ gem 'guard-rake'
 
 gem 'rack'
 gem 'rack-rewrite'
-# gem 'rack-streaming-proxy'
+gem 'rack-streaming-proxy'
 
 gem 'sass'
 gem 'compass'
