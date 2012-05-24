@@ -5,7 +5,7 @@ use Rake::Pipeline::Middleware, 'Assetfile'
 require 'rack/streaming_proxy'
 use Rack::StreamingProxy do |request|
    if request.path.start_with?('/irc')
-     "http://127.0.0.1:5984#{request.path}"
+     "http://127.0.0.1:5984#{request.path}?#{request.query_string}"
    end
 end
 

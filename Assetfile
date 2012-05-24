@@ -37,7 +37,7 @@ class HandlebarsFilter < Filter
   end
 end
 
-output '_attachments_tmp'
+output '_attachments'
 
 input 'app' do
 
