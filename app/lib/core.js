@@ -39,7 +39,8 @@ IRC = Ember.Application.create({
         return a;
     },
 
-    loadDate: function(view, event, day) {
+    loadDate: function(event) {
+        var day = event.context;
         var date = Ember.getPath(day, 'date');
         var dataSource = Ember.getPath(this, 'dataSource');
         if (dataSource) {
