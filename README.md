@@ -55,3 +55,4 @@ Inside the `_attachments` folder is the basic front end. It uses Ember.js and BP
 - execute `bpm rebuild` inside `_attachments`
 - push the Couchapp to your CouchDB; if you have `couchapp` installed, do a `couchapp push http://localhost:5984/irc`
 - access the IRC log viewer at `http://localhost:5984/irc/_design/viewer/index.html`
+

@@ -3,7 +3,3 @@
 
 # Couchapp
 .couchapprc
-
-# BPM
-_attachments/.bpm
-_attachments/assets
