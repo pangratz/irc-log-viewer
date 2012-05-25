@@ -6,10 +6,9 @@ IRC.CouchDBDataSource = Ember.Object.extend({
         var messagesController = this.get('messagesController');
         messagesController.clear();
         messagesController.set('loading', true);
-        var from = day || IRC.createDateTime();
-        var to = from.advance({
-            day: 1
-        });
+        var from = day || IRC.createDate();
+        var to = IRC.getNextDay(from);
+        console.log('load messages from ' + from + ' to ' + to);
         messagesController.set('date', from);
         $.couch.db('irc').view('viewer/messages', {
             success: function(data) {
@@ -34,13 +33,7 @@ IRC.CouchDBDataSource = Ember.Object.extend({
                 if (data && data.rows && data.rows.length > 0) {
                     data.rows.forEach(function(doc) {
                         var key = doc.key;
-                        var date = Ember.DateTime.create().adjust({
-                            year: key[0],
-                            month: key[1],
-                            day: key[2],
-                            hour: 0,
-                            timezone: 0
-                        });
+                        var date = IRC.createDate([key[0], key[1], key[2], 0]);
                         daysController.addDay({
                             date: date,
                             count: doc.value
