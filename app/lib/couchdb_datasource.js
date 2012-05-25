@@ -8,7 +8,6 @@ IRC.CouchDBDataSource = Ember.Object.extend({
         messagesController.set('loading', true);
         var from = day || IRC.createDate();
         var to = IRC.getNextDay(from);
-        console.log('load messages from ' + from + ' to ' + to);
         messagesController.set('date', from);
         $.couch.db('irc').view('viewer/messages', {
             success: function(data) {
