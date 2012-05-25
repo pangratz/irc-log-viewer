@@ -65,14 +65,14 @@ module('IRC#getNextDay');
 
 test('returns the next day',
 function() {
-    var date = new Date('2012-05-05T12:00:00');
-    equal(date.getUTCDate(), 5, 'precond - date is the 5th');
+    var date = new Date('2012-05-05T12:00:00+00:00');
+    equal(date.getDate(), 5, 'precond - date is the 5th');
 
     var nextDay = IRC.getNextDay(date);
 
-    equal(date.getUTCDate(), 5, 'date is not modified');
+    equal(date.getDate(), 5, 'date is not modified');
     ok(nextDay, 'returned object exists');
-    equal(nextDay.getUTCDate(), 6, 'next day is the 6th');
+    equal(nextDay.getDate(), 6, 'next day is the 6th');
 });
 
 module('IRC#getDateArray');
