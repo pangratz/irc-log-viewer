@@ -1,4 +1,4 @@
-## irc-log-viewer
+## irc-log-viewer [![Build Status](https://secure.travis-ci.org/pangratz/irc-log-viewer.png)](http://travis-ci.org/pangratz/irc-log-viewer)
 
 This is a viewer for IRC logs which are stored in a CouchDB. It's basically a couchapp using Ember.js. Demo? Here you go: [http://emberjs.iriscouch.com/irc/_design/viewer/index.html](http://emberjs.iriscouch.com/irc/_design/viewer/index.html) (transcript of #emberjs channel)
 
