@@ -7,7 +7,7 @@ IRC.set('MessagesController', Ember.ArrayProxy.extend({
             id: msg.id,
             username: msg.user.name,
             text: msg.text,
-            date: IRC.createDateTime(msg.date)
+            date: IRC.createDate(msg.date)
         });
         this.pushObject(obj);
     },
@@ -23,7 +23,7 @@ IRC.set('DaysController', Ember.ArrayProxy.extend({
 
     addDay: function(day) {
         this.pushObject(Ember.Object.create({
-            date: IRC.createDateTime(day.date),
+            date: IRC.createDate(day.date),
             count: day.count
         }));
     },

@@ -1,40 +1,44 @@
 require('jquery');
 require('ember');
+require('moment');
 require('jquery.couch');
-
-/* YES and NO globals needed in datetime */
-window.YES = true;
-window.NO = false;
-
-require('datetime');
 
 IRC = Ember.Application.create({
     VERSION: '0.0.1-snapshot',
 
-    createDateTime: function(date) {
-        if (arguments.length === 0) {
-            return Ember.DateTime.create().adjust({
-                timezone: 0
-            });
-        }
-        if (date && Ember.DateTime.detectInstance(date)) {
-            return date.adjust({
-                timezone: 0
-            });
-        }
+    dateStrDict: {
+        year: 'year',
+        month: 'month',
+        day: 'date',
+        hour: 'hours',
+        minute: 'minutes',
+        second: 'seconds',
+        millisecond: 'milliseconds'
+    },
 
-        var dateObj = (Ember.typeOf(date) === 'string') ? new Date(date) : date;
-        var time = dateObj.getTime();
-        return Ember.DateTime.create(time).adjust({
-            timezone: 0
-        });
+    createDate: function(date) {
+        var src = date;
+        if (Ember.typeOf(date) === 'array') {
+            src = Date.UTC.apply({}, date);
+        }
+        return moment(src).utc().toDate();
+    },
+
+    getNextDay: function(day) {
+        return moment(day).clone().add('days', 1).toDate();
     },
 
     getDateArray: function() {
-        var date = arguments[0];
+        var date = moment(arguments[0]).utc();
         var a = [];
         for (var i = 1; i < arguments.length; i++) {
-            a.push(date.get(arguments[i]));
+            var dateStr = IRC.dateStrDict[arguments[i]];
+            if (!dateStr) {
+                a.push(null);
+            } else {
+                var value = date[dateStr]();
+                a.push(value);
+            }
         }
         return a;
     },
