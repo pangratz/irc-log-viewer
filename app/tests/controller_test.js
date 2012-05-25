@@ -18,7 +18,7 @@ function() {
     ok(IRC.MessagesController, 'it exists');
 });
 
-test('add new message', 8,
+test('add new message', 7,
 function() {
     ok(controller.addMessage, 'has a method addMessage');
     var message = {
@@ -36,10 +36,9 @@ function() {
     ok(addedMessage);
 
     var addedDate = addedMessage.get('date');
-    ok(Ember.DateTime.detectInstance(addedDate), 'date of the message is a Ember.DateTime');
-    var date = IRC.createDateTime('2012-12-21T12:34:56.789Z');
-    equal(Ember.DateTime.compareDate(date, addedDate), 0, 'added date is the correct Ember.DateTime object');
-    ok(date.isEqual(addedDate), 'added date is the correct Ember.DateTime object');
+    ok(addedDate instanceof Date, 'date of the message is a Date');
+    var date = IRC.createDate('2012-12-21T12:34:56.789Z');
+    equal(date.getTime(), addedDate.getTime(), 'added date is the correct Date object');
     equal(addedMessage.get('username'), message.user.name, 'addedMessage has the username');
     equal(addedMessage.get('text'), message.text, 'addedMessage has the text');
 });
@@ -105,7 +104,7 @@ function() {
 
     var addedDay = controller.objectAt('0');
     ok(addedDay);
-    ok(IRC.createDateTime('2012-12-21T12:34:56.789Z').isEqual(addedDay.get('date')), 'added date is equal to original');
+    equal(IRC.createDate('2012-12-21T12:34:56.789Z').getTime(), addedDay.get('date').getTime(), 'added date is equal to original');
     equal(addedDay.get('count'), 123, 'count of added day is the same as original');
 });
 

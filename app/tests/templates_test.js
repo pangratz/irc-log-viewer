@@ -25,7 +25,7 @@ function() {
     var view = Ember.View.create({
         elementId: 'dateView',
         template: Ember.Handlebars.compile('{{format date}}'),
-        date: Ember.DateTime.create()
+        date: IRC.createDate()
     });
 
     Ember.run(function() {
@@ -40,12 +40,8 @@ test('Handlebars format helper works with specified format', 1,
 function() {
     var view = Ember.View.create({
         elementId: 'dateView',
-        template: Ember.Handlebars.compile('{{format date "%Y-%m-%d"}}'),
-        date: Ember.DateTime.create({
-            year: 2012,
-            month: 12,
-            day: 21
-        })
+        template: Ember.Handlebars.compile('{{format date "YYYY-MM-DD"}}'),
+        date: IRC.createDate('2012-12-21T12:00:00')
     });
 
     Ember.run(function() {

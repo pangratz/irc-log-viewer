@@ -25,9 +25,6 @@ Ember.View.create({
 }).appendTo('#days');
 
 Ember.run(function() {
-    IRC.dataSource.loadDay(IRC.createDateTime().adjust({
-        hour: 0,
-        timezone: 0
-    }));
+    IRC.dataSource.loadDay(IRC.createDate());
     IRC.dataSource.loadDays();
 });

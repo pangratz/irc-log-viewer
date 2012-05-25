@@ -13,21 +13,23 @@ String.prototype.parseURL = function() {
     });
 };
 
-Handlebars.registerHelper('format', function(property, format) {
-    var dateFormat = Ember.DATETIME_ISO8601;
+Handlebars.registerHelper('format',
+function(property, format) {
+    var dateFormat;
     if (Ember.typeOf(format) === 'string') {
         dateFormat = format;
     }
     var value = Ember.getPath(this, property);
-    if (value && Ember.DateTime.detectInstance(value)) {
-        value = value.toFormattedString(dateFormat);
+    if (value) {
+        value = moment(value).utc().format(dateFormat);
     } else {
         value = undefined;
     }
     return new Handlebars.SafeString(value);
 });
 
-Handlebars.registerHelper('parse', function(property) {
+Handlebars.registerHelper('parse',
+function(property) {
     var value = Ember.getPath(this, property);
     value = Handlebars.Utils.escapeExpression(value);
     value = value.parseURL();
