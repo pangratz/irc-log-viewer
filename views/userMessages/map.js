@@ -2,7 +2,7 @@ function(doc) {
     if (doc.user) {
         var d = new Date(doc.date),
         Y = d.getUTCFullYear(),
-        M = d.getUTCMonth() + 1,
+        M = d.getUTCMonth(),
         D = d.getUTCDate(),
         h = d.getUTCHours(),
         m = d.getUTCMinutes(),
