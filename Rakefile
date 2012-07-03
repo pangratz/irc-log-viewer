@@ -1,7 +1,8 @@
 APPNAME = 'irc'
 
-require 'colored'
+require "bundler/setup"
 require 'rake-pipeline'
+require 'colored'
 
 desc "Build #{APPNAME}"
 task :build => :clean do
