@@ -56,7 +56,7 @@ or
 
 ### Deploy
 
-- execute `bundle execute rake build`
+- execute `bundle exec rake build`
 - push the Couchapp to your CouchDB; if you have `couchapp` installed, do a `couchapp push http://localhost:5984/irc`
 - access the IRC log viewer at `http://localhost:5984/irc/_design/viewer/index.html`
 
