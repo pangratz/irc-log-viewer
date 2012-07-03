@@ -39,3 +39,5 @@ desc "Automatically run tests (Mac OS X only)"
 task :autotest do
   system("kicker -e 'rake test' app")
 end
+
+task :default => :test
