@@ -45,6 +45,7 @@ Inside the `app` folder is the basic application.
 ### Developing
 
 - Clone this repo, obviously
+- execute `couchapp init` to create an empty `.couchapprc` file inside the project (See section `.couchapprc` on http://couchapp.org/page/couchapp-config)
 - execute `bundle install`
 - Tests are in located in the `tests` folder
 - Execute `bundle execute rackup` to start test server
