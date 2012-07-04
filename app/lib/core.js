@@ -2,6 +2,8 @@ require('jquery');
 require('ember');
 require('moment');
 require('jquery.couch');
+require('date');
+require('jquery.datePicker');
 
 IRC = Ember.Application.create({
     VERSION: '0.0.1-snapshot',
@@ -50,6 +52,19 @@ IRC = Ember.Application.create({
         if (dataSource) {
             dataSource.loadDay(date);
         }
-    }
+    },
+
+		ready: function() {
+				$("#days").datePicker({
+					inline:true,
+					startDate: '01/01/1970',
+					endDate: (new Date()).asString()
+				}).bind('dateSelected', function(e, selectedDate, $td){
+					if (IRC.dataSource) {
+						console.log(selectedDate);
+            IRC.dataSource.loadDay(selectedDate);
+					}
+				});
+		}
 
 });
