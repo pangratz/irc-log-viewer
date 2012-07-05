@@ -18,12 +18,6 @@ Ember.View.create({
     dateBinding: 'IRC.messagesController.date'
 }).appendTo('#messages');
 
-Ember.View.create({
-    templateName: 'days'.tmpl(),
-    daysBinding: 'IRC.daysController',
-    loadingBinding: 'IRC.daysController.loading'
-}).appendTo('#days');
-
 Ember.run(function() {
     IRC.dataSource.loadDay(IRC.createDate());
     IRC.dataSource.loadDays();
